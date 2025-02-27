@@ -7,6 +7,7 @@ energy_cans = 0
 visitors = 1
 visitor_price = 1  # Price increases * 2 per visitor bought
 xp = 0
+
 prestige = 0
 lock = threading.Lock()  # Lock to protect global variables
 
