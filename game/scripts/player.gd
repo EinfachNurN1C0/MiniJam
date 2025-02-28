@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 300
+var speed = 20
 var click_pos = Vector2()
 var target_pos = Vector2()
 
@@ -15,10 +15,10 @@ func _physics_process(delta):
 		target_pos = (click_pos - position).normalized()
 		velocity = target_pos * speed
 		if click_pos.x > position.x:
-			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("walk")
 			move_and_slide()
 		else:
-			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("walk")
 			move_and_slide()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dinnomhv4bt80"]
+[gd_scene load_steps=6 format=4 uid="uid://dinnomhv4bt80"]
 
 [ext_resource type="Texture2D" uid="uid://cldeetts0ixh" path="res://assets/Summer Tile.png" id="1_5y30c"]
 [ext_resource type="PackedScene" uid="uid://n8826gy4jhif" path="res://scenes/player.tscn" id="2_vvd5q"]
+[ext_resource type="PackedScene" uid="uid://ccv2hd1joefo0" path="res://scenes/can.tscn" id="3_faxua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tu72p"]
 texture = ExtResource("1_5y30c")
@@ -78,3 +79,6 @@ tile_set = SubResource("TileSet_b64gn")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_vvd5q")]
 position = Vector2(24, 56)
+
+[node name="can" parent="." instance=ExtResource("3_faxua")]
+position = Vector2(88, 56)
