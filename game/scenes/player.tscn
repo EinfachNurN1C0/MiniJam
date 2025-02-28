@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://n8826gy4jhif"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_gfq12"]
+[ext_resource type="Texture2D" uid="uid://de2cieyhbswu6" path="res://assets/SlowTurtle.png" id="1_rjcqc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d4qt"]
+atlas = ExtResource("1_rjcqc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ddxc"]
+atlas = ExtResource("1_rjcqc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m83e"]
+atlas = ExtResource("1_rjcqc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxdtl"]
+atlas = ExtResource("1_rjcqc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjito"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d4qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ddxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m83e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxdtl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feyf2"]
+size = Vector2(19.3567, 10)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_gfq12")
+speed = 100
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kjito")
+animation = &"walk"
+frame_progress = 0.0480115
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(-0.275, 4.275)
+scale = Vector2(0.855, 0.855)
+shape = SubResource("RectangleShape2D_feyf2")
